@@ -31,3 +31,15 @@ body {
     text-wrap: balance;
   }
 }
+
+.dropdown-trigger {
+  @apply cursor-pointer px-4 py-2  border rounded shadow-sm min-w-[172px] ;
+}
+
+.dropdown-menu {
+  @apply absolute mt-2 w-max  border rounded shadow-lg bg-black bg-opacity-90;
+}
+
+.dropdown-item {
+  @apply cursor-pointer px-4 py-2 hover:bg-slate-900 hover:bg-opacity-85;
+}
