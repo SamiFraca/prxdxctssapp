@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext, useEffect } from "react";
+import React, {  useEffect } from "react";
 import { useProductContext } from "../context/ProductsContext";
 
 export type ProductListProps = {
@@ -9,6 +9,7 @@ export type ProductListProps = {
   category: string;
   price: number;
   available: boolean;
+  isVisible: boolean;
 };
 
 export const ProductList = () => {
@@ -29,7 +30,7 @@ export const ProductList = () => {
   }, [setProducts]);
 
   return (
-    <div className="w-full px-4">
+    <div className="w-full px-4 flex flex-col flex-wrap overflow-auto">
       <ul className="flex w-full gap-12 px-4 mt-4">
         <li className="w-1/5">Id</li>
         <li className="w-1/5">Name</li>
@@ -39,13 +40,18 @@ export const ProductList = () => {
       </ul>
       <div className="w-full px-4 mt-4">
         {products.map((product) => (
-          <ul key={product.id} className="flex w-full gap-12 items-center py-2">
-            <li className="w-1/5 text-base">{product.id}</li>
-            <li className="w-1/5 text-base">{product.name}</li>
-            <li className="w-1/5 text-base">{product.category}</li>
-            <li className="w-1/5 text-base">{product.price}$</li>
+          <ul
+            key={product.id}
+            className={`flex w-full  gap-12 items-center py-2 ${
+              product.isVisible ? "" : "hidden"
+            }` }
+          >
+            <li className="md:w-1/5 md:text-base">{product.id}</li>
+            <li className="md:w-1/5 md:text-base">{product.name}</li>
+            <li className="md:w-1/5 md:text-base">{product.category}</li>
+            <li className="md:w-1/5 md:text-base">{product.price}$</li>
             <li
-              className={`w-1/5 text-base ${
+              className={`md:w-1/5 text-base ${
                 product.available ? "text-green-500" : "text-red-500"
               }`}
             >
