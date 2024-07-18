@@ -51,7 +51,6 @@ export const ControlToolbar = () => {
         isVisible: product.isVisible && available === product.available,
       }));
     }
-
     if (sortByFilter !== null) {
       filteredProducts = filteredProducts.sort((a, b) => {
         if (sortByFilter === "Name") {

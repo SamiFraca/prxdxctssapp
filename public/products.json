@@ -5,13 +5,15 @@
     "category": "Electronics",
     "price": 1200.0,
     "available": true,
+    "isVisible": true
   },
-  {
+    {
     "id": 4,
     "name": "Wireless Headphones",
     "category": "Accessories",
     "price": 200.0,
     "available": true,
+    "isVisible": true
   },
   {
     "id": 2,
@@ -19,12 +21,15 @@
     "category": "Electronics",
     "price": 750.0,
     "available": false,
+    "isVisible": true
   },
   {
     "id": 3,
     "name": "Coffee Maker Deluxe",
     "category": "Home Appliances",
     "price": 150.0,
+    "available": true,
+    "isVisible": true
   },
   {
     "id": 5,
@@ -32,5 +37,6 @@
     "category": "Accessories",
     "price": 95.0,
     "available": false,
+    "isVisible": true    
   }
 ]

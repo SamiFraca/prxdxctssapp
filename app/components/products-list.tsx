@@ -1,7 +1,8 @@
 "use client";
 
-import React, {  useEffect } from "react";
+import React, { useEffect } from "react";
 import { useProductContext } from "../context/ProductsContext";
+import Link from "next/link";
 
 export type ProductListProps = {
   id: number;
@@ -44,10 +45,23 @@ export const ProductList = () => {
             key={product.id}
             className={`flex w-full  gap-12 items-center py-2 ${
               product.isVisible ? "" : "hidden"
-            }` }
+            }`}
           >
             <li className="md:w-1/5 md:text-base">{product.id}</li>
-            <li className="md:w-1/5 md:text-base">{product.name}</li>
+            <li className="md:w-1/5 md:text-base">
+              <Link
+                key={product.id}
+                href={{
+                  pathname: `/products/${product.id}`,
+                  query: {
+                    name: product.name,
+                    category: product.category,
+                  },
+                }}
+              >
+                {product.name}
+              </Link>
+            </li>
             <li className="md:w-1/5 md:text-base">{product.category}</li>
             <li className="md:w-1/5 md:text-base">{product.price}$</li>
             <li

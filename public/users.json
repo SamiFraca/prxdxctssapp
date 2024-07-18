@@ -1,0 +1,18 @@
+[
+  {
+    "email": "test1234@yopmail.com",
+    "password": "test123"
+  },
+  {
+    "email": "user495@yopmail.com",
+    "password": "user123"
+  },
+  {
+    "email": "user123@yopmail.com",
+    "password": "user1234"
+  },
+  {
+    "email": "user1234@yopmail.com",
+    "password": "user1235"
+  }
+]
