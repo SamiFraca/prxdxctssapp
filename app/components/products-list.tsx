@@ -47,30 +47,29 @@ export const ProductList = () => {
               product.isVisible ? "" : "hidden"
             }`}
           >
-            <li className="md:w-1/5 md:text-base">{product.id}</li>
-            <li className="md:w-1/5 md:text-base">
-              <Link
-                key={product.id}
-                href={{
-                  pathname: `/products/${product.id}`,
-                  query: {
-                    name: product.name,
-                    category: product.category,
-                  },
-                }}
-              >
-                {product.name}
-              </Link>
-            </li>
-            <li className="md:w-1/5 md:text-base">{product.category}</li>
-            <li className="md:w-1/5 md:text-base">{product.price}$</li>
-            <li
-              className={`md:w-1/5 text-base ${
-                product.available ? "text-green-500" : "text-red-500"
-              }`}
+            <Link
+              key={product.id}
+              className="flex w-full gap-12 items-center hover:bg-slate-800 py-4 px-1 hover:bg-opacity-70 transition-all rounded-md"
+              href={{
+                pathname: `/products/${product.id}`,
+                query: {
+                  name: product.name,
+                  category: product.category,
+                },
+              }}
             >
-              {product.available ? "Available" : "Not available"}
-            </li>
+              <li className="md:w-1/5 md:text-base">{product.id}</li>
+              <li className="md:w-1/5 md:text-base">{product.name}</li>
+              <li className="md:w-1/5 md:text-base">{product.category}</li>
+              <li className="md:w-1/5 md:text-base">{product.price}$</li>
+              <li
+                className={`md:w-1/5 text-base ${
+                  product.available ? "text-green-500" : "text-red-500"
+                }`}
+              >
+                {product.available ? "Available" : "Not available"}
+              </li>
+            </Link>
           </ul>
         ))}
       </div>

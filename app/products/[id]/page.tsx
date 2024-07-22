@@ -1,4 +1,3 @@
-// app/products/[id]/page.tsx
 import React from "react";
 
 interface ProductPageProps {
@@ -14,7 +13,6 @@ interface ProductPageProps {
 const ProductPage = async ({ params, searchParams }: ProductPageProps) => {
   const { id } = params;
   const { name, category } = searchParams;
-  console.log(searchParams);
 
   return (
     <div>
